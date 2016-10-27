@@ -1,0 +1,13 @@
+<div id="comment">
+ <div class="user-name">
+    <%= comment.user.user_name if comment.user %>
+  </div>
+  <div class="comment-content">
+    <%= comment.content %>
+  <% if comment.user == current_user %>
+    <%= link_to raw('<span class="glyphicon glyphicon-remove btn-sm btn-primary"></span>'), post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+      <!--<span>(class="glyphicon glyphicon-remove delete-comment")</span>-->
+  <% end %>
+
+</div>
+</div>
